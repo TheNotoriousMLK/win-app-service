@@ -31,7 +31,6 @@ jobs:
 
       - name: Zip artifact
         run: |
-          rm -rf .git
           rm -rf .next/cache
           zip -r -q app.zip .
 
