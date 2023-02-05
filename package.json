@@ -14,7 +14,7 @@
     "lint:styles": "stylelint --aei --fix **/*.{css,scss}",
     "lint": "yarn lint:js && yarn lint:styles",
     "prepare": "husky install",
-    "start": "next start -p $PORT"
+    "start": "node ./server.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
@@ -27,6 +27,7 @@
     "@next/font": "^13.1.6",
     "@react-hookz/web": "^22.0.0",
     "@reduxjs/toolkit": "^1.9.2",
+    "express": "^4.18.2",
     "firebase": "^9.17.1",
     "framer-motion": "^9.0.1",
     "loglevel": "^1.8.1",
