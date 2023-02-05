@@ -14,7 +14,7 @@
     "lint:styles": "stylelint --aei --fix **/*.{css,scss}",
     "lint": "yarn lint:js && yarn lint:styles",
     "prepare": "husky install",
-    "start": "node ./server.js"
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
