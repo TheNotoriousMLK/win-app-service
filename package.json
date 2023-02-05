@@ -2,6 +2,7 @@
   "name": "nextjs-typescript",
   "version": "0.1.0",
   "private": true,
+  "main": "./server.js",
   "scripts": {
     "build": "next build",
     "cypress": "NODE_ENV=test cypress open",
