@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - app-service-test-nextjs
+name: Build and deploy Node.js app to Azure Web App - windows-nextjs-app-service
 
 on:
   push:
@@ -82,7 +82,8 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "app-service-test-nextjs"
+          app-name: "windows-nextjs-app-service"
           slot-name: "Production"
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F1C0CBFED4DC44B3867DA8DBC2B10C6E }}
+          # publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F1C0CBFED4DC44B3867DA8DBC2B10C6E }}
+          publish-profile: ${{ secrets.APP_SERVICE_SECRET }}
           package: .
