@@ -31,8 +31,9 @@ jobs:
 
       - name: Zip artifact
         run: |
+          rm -rf .git
           rm -rf .next/cache
-          zip -r app.zip .
+          zip -r -q app.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -55,10 +56,10 @@ jobs:
 
       - name: Unzip artifact web
         run: |
-          unzip app.zip
+          unzip -q app.zip
           rm app.zip
-          ls -alh app
-          du -sh app
+          ls -alh
+          du -sh
 
       - name: "Deploy to Azure Web App"
         id: deploy-to-webapp
@@ -67,4 +68,4 @@ jobs:
           app-name: "my-app-service-nextjs"
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7AD4BCDE46D04FAD833C1FE8AEE47911 }}
-          package: ./app
+          package: .
